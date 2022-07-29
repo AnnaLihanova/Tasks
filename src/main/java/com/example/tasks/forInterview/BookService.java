@@ -24,8 +24,22 @@ public class BookService {
         List<Book> shelf4 = new ArrayList<>();
         List<Book> shelf5 = new ArrayList<>();
 
-        for (int i = 0; i < sortedBooks.size(); i++) {
-            if (i % 5 == 0) {
+        int shelfSize;
+        int booksSize = books.size();
+
+        System.out.println();
+        System.out.println("Количество книг на полках");
+        for (int i = 0; i < 5; i++) {
+            if (booksSize % 5 != 0) {
+                shelfSize = (books.size() / 5) + 1;
+                booksSize--;
+            } else {
+                shelfSize = books.size() / 5;
+            }
+            System.out.println(shelfSize);
+        }
+           for (int i = 0; i < books.size(); i++) {
+            if (i % 5 != 0) {
                 shelf1.add(sortedBooks.get(i));
             }
             if (i % 5 == 1) {
@@ -44,6 +58,7 @@ public class BookService {
                 shelf5.add(sortedBooks.get(i));
             }
         }
+        System.out.println();
         System.out.println("Полка 1 " + shelf1);
         System.out.println("Полка 2 " + shelf2);
         System.out.println("Полка 3 " + shelf3);
@@ -56,6 +71,7 @@ public class BookService {
         shelves.addAll(shelf4);
         shelves.addAll(shelf5);
 
+        System.out.println();
         System.out.println("Все книги " + shelves);
     }
 }

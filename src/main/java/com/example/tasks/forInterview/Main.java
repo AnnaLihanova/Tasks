@@ -1,8 +1,6 @@
 package com.example.tasks.forInterview;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +26,7 @@ public class Main {
     static Book book10 = new Book(10, "К Кофе", "Кто-то");
     static Book book11 = new Book(11, "Л Не знаю", "Кто-то");
     static Book book12 = new Book(12, "М Тула", "Кто-то");
+    static Book book13 = new Book(12, "Н Тула", "Кто-то");
 
     public static void main(String[] args) {
         books.add(book1);
@@ -42,6 +41,7 @@ public class Main {
         books.add(book10);
         books.add(book11);
         books.add(book12);
+        books.add(book13);
 
         bookService.getShelvesOfBooks(books);
 
